@@ -1,12 +1,12 @@
 package datastructures;
 
-import datastructures.list.SinglyLinkedList;
+import datastructures.list.CircularArrayList;
 
 public class Queue {
-    SinglyLinkedList list;
+    CircularArrayList list;
 
     public Queue() {
-        list = new SinglyLinkedList();
+        list = new CircularArrayList();
     }
 
     public void enqueue(int e) {
