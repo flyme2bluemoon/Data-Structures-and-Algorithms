@@ -60,6 +60,10 @@ public class ArrayList {
         return removed;
     }
 
+    public int getSize() {
+        return size;
+    }
+
     public String toString() {
         int stringArr[] = new int[this.size];
         for (int i = 0; i < this.size; i++) {

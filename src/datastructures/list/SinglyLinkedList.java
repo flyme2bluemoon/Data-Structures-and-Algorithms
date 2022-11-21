@@ -69,6 +69,10 @@ public class SinglyLinkedList {
         return removed.element;
     }
 
+    public int getSize() {
+        return this.size;
+    }
+
     public String toString() {
         if (this.size == 0) {
             return "[]";
