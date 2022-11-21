@@ -6,7 +6,8 @@ import java.util.Random;
 public class Solution {
     public static void main(String[] args) {
         testSortingAlgorithms();
-        testLists();
+        testArrayList();
+        testLinkedList();
     }
 
     private static void testSortingAlgorithms() {
@@ -50,7 +51,7 @@ public class Solution {
         System.out.println("insertion sort (seconds): " + (endTime - startTime) / SECONDS_PER_NANOSECOND);
     }
 
-    private static void testLists() {
+    private static void testArrayList() {
         ArrayList al = new ArrayList();
         for (int i = 0; i < 80; i++) {
             al.add(i);
@@ -64,5 +65,22 @@ public class Solution {
         System.out.println(al);
         al.add(6, 5);
         System.out.println(al);
+    }
+
+    private static void testLinkedList() {
+        SinglyLinkedList sLinkedList = new SinglyLinkedList();
+        for (int i = 1; i <= 10; i++) {
+            sLinkedList.addLast(i);
+        }
+        System.out.println(sLinkedList);
+        for (int i = -1; i >= -10; i--) {
+            sLinkedList.addFirst(i);
+        }
+        System.out.println(sLinkedList);
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(sLinkedList.removeFirst());
+            System.out.println(sLinkedList.removeLast());
+            System.out.println(sLinkedList);
+        }
     }
 }
