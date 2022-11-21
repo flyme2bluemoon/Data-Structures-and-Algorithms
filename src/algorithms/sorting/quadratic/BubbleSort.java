@@ -14,7 +14,7 @@ public class BubbleSort extends Sort {
 //        System.out.println("=> " + Arrays.toString(arr));
         boolean sorted = false;
         // iterate through the list n - 1 times since last element is by default the smallest
-        for (int i = 0; i < arr.length - 1 && !sorted; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             // i also indicates the size of sorted section at the end of the array
             // subtract one to prevent out of bounds error with arr[j+1]
             sorted = true;
@@ -26,6 +26,9 @@ public class BubbleSort extends Sort {
                     arr[j+1] = tmp;
                     sorted = false;
                 }
+            }
+            if (sorted) {
+                break;
             }
 //            System.out.println("   " + Arrays.toString(arr));
         }
