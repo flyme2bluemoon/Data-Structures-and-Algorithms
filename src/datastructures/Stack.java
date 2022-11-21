@@ -1,12 +1,12 @@
 package datastructures;
 
-import datastructures.list.SinglyLinkedList;
+import datastructures.list.SLinkedList;
 
 public class Stack {
-    SinglyLinkedList list;
+    SLinkedList list;
 
     public Stack() {
-        list = new SinglyLinkedList();
+        list = new SLinkedList();
     }
 
     public void push(int e) {
@@ -29,5 +29,15 @@ public class Stack {
 
     public String toString() {
         return list.toString();
+    }
+
+    public static void main(String[] args) {
+        Stack stack = new Stack();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.pop();
+        stack.push(4);
+        System.out.println(stack);
     }
 }

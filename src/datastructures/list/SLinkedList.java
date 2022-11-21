@@ -1,14 +1,15 @@
 package datastructures.list;
 
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class SinglyLinkedList {
+public class SLinkedList implements Iterable<Integer> {
     private SNode head;
     private SNode tail;
     private int size;
 
-    public SinglyLinkedList() {
+    public SLinkedList() {
         this.head = null;
         this.tail = null;
         this.size = 0;
@@ -74,16 +75,35 @@ public class SinglyLinkedList {
     }
 
     public String toString() {
-        if (this.size == 0) {
-            return "[]";
-        }
         int arr[] = new int[this.size];
-        SNode cur = this.head;
-        for (int i = 0; i < this.size; i++) {
-            arr[i] = cur.element;
-            cur = cur.next;
+        int i = 0;
+        for (int e : this) {
+            arr[i] = e;
+            i++;
         }
         return Arrays.toString(arr);
+    }
+
+    public Iterator iterator() {
+        return new SLinkedListIterator(this.head);
+    }
+
+    private class SLinkedListIterator implements Iterator<Integer> {
+        SNode cur;
+
+        public SLinkedListIterator(SNode head) {
+            this.cur = head;
+        }
+
+        public boolean hasNext() {
+            return this.cur != null;
+        }
+
+        public Integer next() {
+            int currentElement = this.cur.element;
+            this.cur = this.cur.next;
+            return currentElement;
+        }
     }
 
     private class SNode {

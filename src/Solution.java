@@ -68,7 +68,7 @@ public class Solution {
     }
 
     private static void testLinkedList() {
-        SinglyLinkedList sLinkedList = new SinglyLinkedList();
+        SLinkedList sLinkedList = new SLinkedList();
         for (int i = 1; i <= 10; i++) {
             sLinkedList.addLast(i);
         }
