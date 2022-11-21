@@ -52,18 +52,17 @@ public class Solution {
 
     private static void testLists() {
         ArrayList al = new ArrayList();
-        al.addLast(0);
-        al.addLast(1);
-        al.addLast(2);
-        al.addLast(3);
-        al.addLast(4);
-        al.addLast(5);
-        al.addLast(6);
-        al.addLast(7);
-        al.addLast(8);
-        al.addLast(10);
-        al.removeLast();
-        al.addLast(9);
+        for (int i = 0; i < 80; i++) {
+            al.add(i);
+        }
+        System.out.println(al);
+        System.out.println(al.get(69));
+        System.out.println(al.get(42));
+        al.set(42, 420);
+        System.out.println(al.get(42));
+        al.remove(5);
+        System.out.println(al);
+        al.add(6, 5);
         System.out.println(al);
     }
 }
